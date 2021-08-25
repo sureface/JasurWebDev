@@ -1,0 +1,101 @@
+html{
+
+
+  body{
+    background: linear-gradient(to right top, #0040ff 20%, #0055ff 50%, #0040ff 67%, #0055ff 98%);
+    .space{
+      margin-top: 130px;
+    }
+    .flag{
+      width: 100px;
+      height: 50px;
+    }
+
+    .form-control{
+      height: calc(2em + 2rem + 1px);
+      background: linear-gradient(
+                      to right bottom,
+                      rgba(255, 255, 255, 0.5),
+                      rgba(255, 255, 255, 0.8)
+      );
+      border: none;
+      color: #ffffff;
+      font-size: 20px;
+
+    }
+    .form-control:focus{
+      background: linear-gradient(to right top, #0888ff 20%, #0890ff 50%, #0999ff 67%, #0999ff 98%);
+      color: #ffffff;
+      font-size: 18px;
+      border: none;
+    }
+    .form-control::placeholder{
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    .filter{
+      margin-top: 100px;
+    }
+    .navbarbackground{
+      padding: 0px 60px;
+      background: linear-gradient(to right top, #0888ff 20%, #0890ff 50%, #0999ff 67%, #0999ff 98%);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+
+      .navLogo{
+        width: 70px;
+        height: 70px;
+        border: 5px solid #0097ff;
+        border-radius: 50%;
+      }
+
+      .nav-link{
+        font-size: 20px;
+        color: #ffffff;
+        font-weight: 600;
+        border: none;
+        height: 100%;
+        padding: 30px 30px;
+        transition: 0.9s;
+
+        &:hover{
+          background: linear-gradient(
+                          to right bottom,
+                          rgba(255, 255, 255, 0.3),
+                          rgba(255, 255, 255, 0.4)
+          );
+          color: #ffffff;
+        }
+      }
+
+      .btn-nav{
+        font-size: 16px;
+        background: linear-gradient(
+                        to right bottom,
+                        rgba(255, 255, 255, 0.3),
+                        rgba(255, 255, 255, 0.4)
+        );
+        border-radius: 50px;
+        color: #ffffff;
+        border:  none;
+        padding: 15px 30px;
+        box-shadow: none;
+        outline: 0;
+      }
+
+    }
+    .navbarbackground.active{
+      background: linear-gradient(to right top, #0888ff 20%, #0890ff 50%, #0999ff 67%, #0999ff 98%);
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      .navlink{
+        color: #000000;
+      }
+    }
+
+  }
+
+}
