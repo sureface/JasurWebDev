@@ -12,7 +12,7 @@ export function MainLayout({children, title = ''}) {
                 <meta charSet="utf-8" />
             </Head>
             <Navigation />
-            <main>
+            <main className="pt-[120px]">
                 {children}
             </main>
             <Footer />
