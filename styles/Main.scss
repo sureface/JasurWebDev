@@ -5,4 +5,55 @@ body{
   font-family: 'Architects Daughter', cursive;
   font-family: 'Belleza', sans-serif;
   font-family: 'Roboto', sans-serif;
+
+  .card-animation{
+
+    .animate{
+      position: relative;
+
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 50px;
+        height: 100%;
+        background: rgba(255,255,255,0.5);
+        transform: skewX(45deg) translateX(530px);
+        transition: 0.5s;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 50px;
+        height: 100%;
+        background: rgba(255,255,255,0.5);
+        transform: skewX(45deg) translateX(530px);
+        transition: 0.5s;
+        transition-delay: 0.2s;
+      }
+      img{
+        transform: scale(1);
+        transition: 0.5s;
+      }
+    }
+    &:hover{
+      .animate{
+        &:before{
+          transform: skewX(45deg) translateX(-530px);
+        }
+        &:after{
+          transition-delay: 0.2s;
+          transform: skewX(45deg) translateX(-530px);
+        }
+        img{
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
 }
