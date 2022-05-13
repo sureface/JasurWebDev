@@ -10,7 +10,7 @@ export default function Document() {
                             href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Belleza&family=Roboto&display=swap"
                             rel="stylesheet" />
             </Head>
-            <body>
+            <body className="font-sans">
             <Main />
             <NextScript />
             </body>
