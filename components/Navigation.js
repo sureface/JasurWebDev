@@ -23,7 +23,7 @@ export function Navigation() {
     return(
         <header className={scrollDown === true ? "w-full backdrop-filter backdrop-blur-md bg-white/50 fixed z-10 trasition ease-in-out duration-500 shadow-xl": "w-full backdrop-filter backdrop-blur-lg bg-white/50 fixed z-10 trasition ease-in-out duration-500"}>
             <div className="container mx-auto px-3">
-                <div className={scrollDown === true ? "flex py-5 items-center justify-between trasition ease-in-out duration-500" : "flex py-10 items-center justify-between trasition ease-in-out duration-500"}>
+                <div className={scrollDown === true ? "flex py-5 items-center justify-between trasition ease-in-out duration-500" : "flex py-7 items-center justify-between trasition ease-in-out duration-500"}>
                     <div className="flex items-center justify-center w-full">
                         <Link href="/">
                             <a className="text-xl font-bold tracking-tighter text-indigo-400">Countries</a>

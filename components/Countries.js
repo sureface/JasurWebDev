@@ -2,15 +2,27 @@ import React, {useState, useEffect} from 'react';
 import {SearchBar} from "./SearchBar";
 import Image from "next/image";
 import Link from "next/link";
+import {Loading} from "./Loading";
 
 export function Countries({data: serverData}){
 
     const [country, setCountries] = useState(serverData);
-    // const [loadMore, setLoadMore] = useState(3);
+    const [loadMore, setLoadMore] = useState(8);
 
-    // const loadData = () => {
-    //     setLoadMore(loadMore + 5)
-    // }
+    const loadData = () => {
+        setLoadMore(loadMore + 8)
+    }
+
+    const loadOnScroll = () => {
+        if (window.scrollY + window.innerHeight >= document.body.offsetHeight - 100){
+            loadData();
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', loadOnScroll);
+        return () => window.removeEventListener('scroll', loadOnScroll);
+    }, [loadMore]);
 
     useEffect(() => {
         async function getCountries() {
@@ -28,9 +40,7 @@ export function Countries({data: serverData}){
 
     if (!country) {
         return <>
-            <h1>
-                Loading ...
-            </h1>
+            <Loading />
         </>
     }
 
@@ -44,7 +54,7 @@ export function Countries({data: serverData}){
                 <section className="py-16">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-6">
                         {
-                            country.map((item, index) => {
+                            country.slice(0, loadMore).map((item, index) => {
                                 return (
                                     <Link href={`/${item.name.replace(/\s+/g, "-")}`} key={index}>
                                         <a className="flex items-center justify-center">
